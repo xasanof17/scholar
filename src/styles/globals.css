@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply m-0 h-full min-h-screen scroll-smooth bg-[#F9FAFC] font-sans text-lg font-normal outline-yellow;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-[1536px] px-5;
+  }
+  .link {
+    @apply text-[20px] font-semibold text-black opacity-50 transition duration-150 hover:opacity-100 lg:text-[22px];
+  }
+  .link.active {
+    @apply opacity-100;
+  }
+  .btn-yellow {
+    @apply inline-flex items-center justify-center rounded-lg bg-yellow py-2.5 text-center text-lg font-medium text-gray-900 hover:bg-yellow/90 focus:outline-none focus:ring-4 focus:ring-yellow/50 dark:focus:ring-yellow/50 sm:px-5;
+  }
+  .navlist {
+    @apply hidden items-center space-x-3 xl:flex;
+  }
+}
