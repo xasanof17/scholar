@@ -29,7 +29,8 @@ module.exports = {
         "5xl": "3.052rem",
       },
       colors: {
-        yellow: "#FFCF00", //#FFCF00 #EBE114
+        yellow: "#FFCF00",
+        light: '#747475'
       },
     },
   },

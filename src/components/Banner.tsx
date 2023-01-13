@@ -9,25 +9,23 @@ const Banner = ({ subtitle, text }: Props) => {
   return (
     <section className="my-[5%]">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-4">
           <div className="flex flex-col">
-            <span className="mb-2 sm:mb-8 text-lg sm:text-xl xl:text-2xl font-medium uppercase text-yellow">
-              {subtitle}
-            </span>
-            <h1 className="w-full max-w-none xl:max-w-[620px] text-3xl ss:text-4xl sm:text-5xl xl:text-6xl font-normal capitalize leading-tight">
+            <span className="subtitle">{subtitle}</span>
+            <h1 className="w-full max-w-none text-3xl font-normal capitalize leading-tight ss:text-4xl sm:text-5xl xl:max-w-[620px] xl:text-6xl">
               Get Quality <b>Tutoring</b> <b>Through</b>{" "}
               <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-yellow ">
                 <b className="relative">1-on-1</b>
               </span>{" "}
               <br /> Online Tutoring
             </h1>
-            <p className="mt-3 sm:mt-6 md:mt-8 w-full max-w-[500px] xl:max-w-[600px] text-base ss:text-lg sm:text-[22px] text-[#747475]">
+            <p className="mt-3 w-full max-w-[500px] text-base text-light ss:text-lg sm:mt-6 sm:text-[22px] md:mt-8 xl:max-w-[600px]">
               {text}
             </p>
-            <div className="mt-7 flex items-center flex-col sm:flex-row space-y-5 sm:space-x-5">
+            <div className="mt-7 flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0 sm:space-x-5">
               <button
                 type="button"
-                className="btn-yellow rounded-full px-10 py-4 w-full sm:w-fit"
+                className="btn-yellow w-full rounded-full px-10 py-4 sm:w-fit"
               >
                 Join for Free
               </button>
@@ -37,7 +35,7 @@ const Banner = ({ subtitle, text }: Props) => {
               </button>
             </div>
           </div>
-          <div className="hidden sm:grid grid-cols-2 gap-5">
+          <div className="hidden grid-cols-2 gap-5 sm:grid">
             <div className="relative flex h-[250px] items-center justify-center rounded-full bg-[#7DC3DD]">
               <span className="absolute -top-6 right-4 block h-5 w-5 rounded-full bg-yellow" />
               <span className="absolute -bottom-1 -left-1 block h-5 w-5 rounded-full bg-[#FEA3C6]" />

@@ -35,9 +35,9 @@ const links = [
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [open, setOpen] = useState(true);
+  const [active, setActive] = useState(false);
   const router = useRouter();
   const { asPath } = router;
-  console.log(asPath);
 
   return (
     <header className="sticky top-0 z-50 w-full border-white backdrop-blur-md">
@@ -57,6 +57,7 @@ const Navbar = () => {
                       ? "active"
                       : ""
                   }`}
+                  onClick={() => setActive((prev) => !prev)}
                 >
                   {link.name}
                 </Link>

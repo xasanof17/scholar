@@ -2,17 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @layer base {
   html,
   body {
-    @apply m-0 h-full min-h-screen scroll-smooth bg-[#F9FAFC] font-sans text-lg font-normal outline-yellow;
+    @apply m-0 h-full min-h-screen scroll-smooth bg-white/90 font-sans outline-yellow;
   }
 }
 
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-[1536px] px-5;
+    @apply mx-auto w-full max-w-[1536px] px-4;
   }
   .link {
     @apply text-[20px] font-semibold text-black opacity-50 transition duration-150 hover:opacity-100 lg:text-[22px];
@@ -25,5 +27,8 @@
   }
   .navlist {
     @apply hidden items-center space-x-3 xl:flex;
+  }
+  .subtitle {
+    @apply mb-2 text-lg font-medium uppercase text-yellow sm:mb-8 sm:text-xl xl:text-2xl;
   }
 }
