@@ -10,7 +10,7 @@ const Button = ({ type, title, onClick, className }: Props) => {
     <>
       <button
         onClick={onClick}
-        className={`${className} group relative overflow-hidden rounded-xl border border-gray-100 bg-gray-100 px-5 py-2.5 text-lg font-medium text-gray-600 shadow-inner`}
+        className={`${className} group relative overflow-hidden rounded-lg bg-gray-100 px-5 py-2.5 text-lg font-medium text-gray-600 shadow-inner`}
       >
         <span className="ease absolute top-0 left-0 h-0 w-0 border-t-2 border-gray-600 transition-all duration-200 group-hover:w-full"></span>
         <span className="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-gray-600 transition-all duration-200 group-hover:w-full"></span>

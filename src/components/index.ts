@@ -4,3 +4,5 @@ export { default as Banner } from "./Banner";
 export { default as About } from "./About";
 export { default as WhyChooseUs } from "./WhyChooseUs";
 export { default as Teachers } from "./Teachers";
+export { default as ResultStudents } from "./ResultStudents";
+export { default as Prices } from "./Prices";
