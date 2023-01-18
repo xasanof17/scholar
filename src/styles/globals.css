@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap");
+@import url("./fonts.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,12 +32,15 @@
     @apply mb-2 text-lg font-medium uppercase text-yellow sm:mb-8 sm:text-xl xl:text-2xl;
   }
   .tab {
-    @apply w-full whitespace-nowrap rounded-md border-2 py-4 text-sm font-semibold uppercase outline-none md:text-xl;
+    @apply w-full whitespace-nowrap rounded-xl py-4 text-sm font-semibold uppercase outline-none transition-all md:text-xl;
   }
   .tab.active {
-    @apply border-transparent bg-black text-yellow shadow-xl shadow-gray-500;
+    @apply bg-black text-yellow shadow-xl shadow-gray-500;
   }
   .tab.noactive {
-    @apply border-gray-500 text-black shadow-xl;
+    @apply bg-gray-200 text-gray-600 shadow-xl shadow-gray-300;
+  }
+  .tabPanels {
+    @apply mt-8 w-full rounded-md py-4;
   }
 }

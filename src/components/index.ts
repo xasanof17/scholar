@@ -6,3 +6,5 @@ export { default as WhyChooseUs } from "./WhyChooseUs";
 export { default as Teachers } from "./Teachers";
 export { default as ResultStudents } from "./ResultStudents";
 export { default as Prices } from "./Prices";
+export { default as TabBlock } from "./TabBlock";
+export { default as Courses } from "./Courses";

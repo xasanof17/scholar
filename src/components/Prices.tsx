@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-
-const tabs = ["standard group", "mini group", "individual"];
+import TabBlock from "./TabBlock";
+import { Button } from "../widgets";
 
 const Prices = () => {
   return (
@@ -17,20 +17,42 @@ const Prices = () => {
         </div>
         <div className="tabs">
           <Tab.Group>
-            <Tab.List className="flex items-center space-x-3">
-              {tabs.map((tab) => (
-                <Tab
-                  className={({ selected }) =>
-                    `tab ${selected ? "active" : "noactive"}`
-                  }
-                >
-                  {tab}
-                </Tab>
-              ))}
-            </Tab.List>
-            <Tab.Panels className="mx-auto max-w-fit pt-10 pb-24 sm:px-4">
-              <Tab.Panel className="tabPanel"></Tab.Panel>
-            </Tab.Panels>
+            <div className="border-2 border-dashed border-yellow p-5">
+              <Tab.List className="flex items-center space-x-14">
+                {["standard group", "mini group", "individual"].map(
+                  (tab, index) => (
+                    <Tab
+                      key={index}
+                      className={({ selected }) =>
+                        `tab ${selected ? "active" : "noactive"}`
+                      }
+                    >
+                      {tab}
+                    </Tab>
+                  )
+                )}
+              </Tab.List>
+              <Tab.Panels className="tabPanels">
+                <Tab.Panel className="tabPanel">
+                  <TabBlock
+                    info={["first", "second", "third"]}
+                    img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
+                  />
+                </Tab.Panel>
+                <Tab.Panel className="tabPanel">
+                  <TabBlock
+                    info={["first", "second", "third", "fourth"]}
+                    img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
+                  />
+                </Tab.Panel>
+                <Tab.Panel className="tabPanel">
+                  <TabBlock
+                    info={["first", "second", "third", "fourth", "five"]}
+                    img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
+                  />
+                </Tab.Panel>
+              </Tab.Panels>
+            </div>
           </Tab.Group>
         </div>
       </div>

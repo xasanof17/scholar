@@ -28,7 +28,7 @@ const links = [
   },
   {
     name: "News",
-    href: "#news",
+    href: "/news",
   },
 ];
 
@@ -40,7 +40,7 @@ const Navbar = () => {
   const { asPath } = router;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-white backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full bg-white shadow-md">
       <Ad />
       <nav className="container">
         <div className="flex items-center justify-between py-4">

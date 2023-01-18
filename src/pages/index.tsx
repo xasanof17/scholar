@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import {
   About,
   Banner,
+  Courses,
   Prices,
   ResultStudents,
   Teachers,
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
       <Teachers />
       <ResultStudents />
       <Prices />
+      <Courses />
     </>
   );
 };
