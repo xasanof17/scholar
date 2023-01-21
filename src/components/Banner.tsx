@@ -10,7 +10,7 @@ const Banner = ({ subtitle, text }: Props) => {
     <section className="my-[5%]">
       <div className="container">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-4">
-          <div className="flex flex-col">
+          <div className="flex flex-col justify-center">
             <span className="subtitle">{subtitle}</span>
             <h1 className="w-full max-w-none text-3xl font-normal capitalize leading-tight ss:text-4xl sm:text-5xl xl:max-w-[620px] xl:text-6xl">
               Get Quality <b>Tutoring</b> <b>Through</b>{" "}

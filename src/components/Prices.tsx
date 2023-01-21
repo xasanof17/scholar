@@ -1,20 +1,24 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import TabBlock from "./TabBlock";
+import { YellowTitle } from "../widgets";
 import { Button } from "../widgets";
 
 const Prices = () => {
+  const infoList = [
+    "Группа 13 (±1) Учеников",
+    "2 книги ( Students book and Home book)",
+    "Фирменная Тетрадь Grammar и Vocabulary",
+    "Сервис Academic Support",
+    "Видео Арсенал для каждого урока",
+    "Speaking Club и Master-class",
+    "Speaking Club и Master-class",
+    "Ielts Speaking",
+  ];
   return (
     <section className="mt-[100px]">
       <div className="container">
-        <div className="mb-16 flex flex-col items-center justify-center">
-          <h2 className="text-4xl font-medium">
-            Our{" "}
-            <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-yellow">
-              <b className="relative">Prices</b>
-            </span>
-          </h2>
-        </div>
+        <YellowTitle title="Prices" />
         <div className="tabs">
           <Tab.Group>
             <div className="border-2 border-dashed border-yellow p-5">
@@ -35,19 +39,22 @@ const Prices = () => {
               <Tab.Panels className="tabPanels">
                 <Tab.Panel className="tabPanel">
                   <TabBlock
-                    info={["first", "second", "third"]}
+                    info={infoList}
+                    price='450 000'
                     img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
                   />
                 </Tab.Panel>
                 <Tab.Panel className="tabPanel">
                   <TabBlock
-                    info={["first", "second", "third", "fourth"]}
+                    info={infoList}
+                    price='450 000'
                     img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
                   />
                 </Tab.Panel>
                 <Tab.Panel className="tabPanel">
                   <TabBlock
-                    info={["first", "second", "third", "fourth", "five"]}
+                    info={infoList}
+                    price='450 000'
                     img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
                   />
                 </Tab.Panel>

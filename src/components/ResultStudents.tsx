@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { YellowTitle } from "../widgets";
 
 const students = [
   { name: "john" },
@@ -14,23 +15,18 @@ const ResultStudents = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 5,
     slidesToScroll: 1,
   };
   return (
     <section className="mt-10">
       <div className="container">
-        <div className="mb-16 flex flex-col items-center justify-center">
-          <h2 className="text-4xl font-medium">
-            Our{" "}
-            <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-yellow">
-              <b className="relative">Students Scores</b>
-            </span>
-          </h2>
-        </div>
+        <YellowTitle title="Students Scores" />
         <Slider {...options}>
           {students.map((student, index) => (
-            <div key={index}>{student.name}</div>
+            <div key={index} className="sliderBlock">
+              {student.name}
+            </div>
           ))}
         </Slider>
       </div>

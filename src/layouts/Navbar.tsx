@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineLanguage } from "react-icons/hi2";
@@ -30,24 +30,39 @@ const links = [
     name: "News",
     href: "/news",
   },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
 ];
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [open, setOpen] = useState(true);
   const [active, setActive] = useState(false);
+  const [scroll, setScroll] = useState(false);
   const router = useRouter();
   const { asPath } = router;
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 50 ? setScroll(true) : setScroll(false);
+    });
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-md">
+    <header
+      className={`sticky top-0 z-50 w-full bg-white shadow-md ${
+        scroll ? "shadow-md" : "shadow-none"
+      }`}
+    >
       <Ad />
       <nav className="container">
         <div className="flex items-center justify-between py-4">
           <Link href="/">
             <Image src="/vercel.svg" alt="Logo" width={150} height={80} />
           </Link>
-          <ul className="navlist">
+          <ul className="navList">
             {links.map((link) => (
               <li key={link.name}>
                 <Link
