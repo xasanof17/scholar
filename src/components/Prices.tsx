@@ -22,7 +22,7 @@ const Prices = () => {
         <div className="tabs">
           <Tab.Group>
             <div className="border-2 border-dashed border-yellow p-5">
-              <Tab.List className="flex items-center space-x-14">
+              <Tab.List className="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4 lg:space-x-14">
                 {["standard group", "mini group", "individual"].map(
                   (tab, index) => (
                     <Tab
@@ -40,21 +40,21 @@ const Prices = () => {
                 <Tab.Panel className="tabPanel">
                   <TabBlock
                     info={infoList}
-                    price='450 000'
+                    price="450 000"
                     img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
                   />
                 </Tab.Panel>
                 <Tab.Panel className="tabPanel">
                   <TabBlock
                     info={infoList}
-                    price='450 000'
+                    price="450 000"
                     img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
                   />
                 </Tab.Panel>
                 <Tab.Panel className="tabPanel">
                   <TabBlock
                     info={infoList}
-                    price='450 000'
+                    price="450 000"
                     img="https://static3.tgstat.ru/channels/_0/8e/8e7c181aaf088a684f39b0e43fe4efea.jpg"
                   />
                 </Tab.Panel>

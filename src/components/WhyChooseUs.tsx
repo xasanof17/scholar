@@ -26,7 +26,7 @@ const benefits = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="my-16 hidden sm:block">
+    <section className="my-16">
       <div className="container">
         <div className="grid grid-rows-1">
           <div className="mb-14 flex flex-col items-center justify-center">
@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
               </span>
             </h2>
           </div>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {benefits.map(({ title, text, icon }, i) => (
               <BenefitBox title={title} text={text} icon={icon} key={i} />
             ))}

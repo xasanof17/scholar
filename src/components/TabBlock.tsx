@@ -9,8 +9,8 @@ interface Props {
 
 const TabBlock = ({ info, img, price }: Props) => {
   return (
-    <div className="grid grid-cols-12 gap-5">
-      <div className="col-span-5 flex flex-col justify-between">
+    <div className="grid grid-cols-12 gap-14 lg:gap-5">
+      <div className="col-span-12 flex flex-col space-y-7 lg:col-span-5 lg:justify-between lg:space-y-0">
         <ul className="infoList">
           {info.map((info, i) => (
             <li key={i} className="infoItem">
@@ -25,7 +25,7 @@ const TabBlock = ({ info, img, price }: Props) => {
         </div>
         <PriceButton title="Sign Up" />
       </div>{" "}
-      <div className="relative col-span-7 h-[600px]">
+      <div className="relative col-span-12 h-[600px] lg:col-span-7">
         <Image src={img} alt="scholar" fill priority />
       </div>
     </div>
