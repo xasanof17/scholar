@@ -14,7 +14,7 @@ const Login = () => {
             Scholar
           </Link>
           <form className="w-full px-10">
-            <input type="text" placeholder="Your name"/>
+            <input type="text" placeholder="Your name" />
           </form>
         </div>
       </div>

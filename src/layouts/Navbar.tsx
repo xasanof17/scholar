@@ -53,9 +53,16 @@ const Navbar = () => {
             <button className="btn-yellow hidden sm:inline">
               Online payment
             </button>
-            <Button onClick={() => router.push("/signup")} type="button" title="Sign up" className="hidden sm:flex" />
+            <Button
+              onClick={() => router.push("/signup")}
+              type="button"
+              title="Sign up"
+              className="hidden sm:flex"
+            />
             <button
-              className="inline lg:hidden"
+              className={`inline lg:hidden ${
+                menu && "rounded-full border-2 border-yellow"
+              }`}
               onClick={() => setMenu((prev) => !prev)}
             >
               {menu ? (

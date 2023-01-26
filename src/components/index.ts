@@ -9,3 +9,4 @@ export { default as Prices } from "./Prices";
 export { default as TabBlock } from "./TabBlock";
 export { default as Courses } from "./Courses";
 export { default as SignUp } from "./SignUp";
+export { default as Phone } from "./Phone";

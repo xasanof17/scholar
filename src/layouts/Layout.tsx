@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import { Phone } from "../components";
 // import TopLoader from "react-top-loader";
 import { Meta } from "../meta";
 import Footer from "./Footer";
@@ -18,7 +19,10 @@ export default function Layout({ children }: Props) {
       <Meta defaultTitle="Scholar Learning Centre" />
       <div className="app">
         <Navbar />
-        <main className="main">{children}</main>
+        <main className="main">
+          {children}
+          <Phone />
+        </main>
         <Footer />
       </div>
     </>

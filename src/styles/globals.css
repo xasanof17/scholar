@@ -8,7 +8,13 @@
 @layer base {
   html,
   body {
-    @apply m-0 h-full min-h-screen scroll-smooth bg-white/90 font-sans outline-yellow;
+    @apply m-0 h-full min-h-screen scroll-smooth bg-white/90 font-sans outline-yellow selection:bg-black selection:text-yellow;
+  }
+  .main {
+    @apply overflow-hidden;
+  }
+  img {
+    @apply pointer-events-none select-none;
   }
 }
 
@@ -17,7 +23,7 @@
     @apply mx-auto w-full max-w-[1536px] px-4;
   }
   .link {
-    @apply text-[20px] font-semibold text-black opacity-50 transition duration-150 hover:opacity-100 lg:text-[22px];
+    @apply text-2xl md:text-[20px] font-semibold text-black opacity-50 transition duration-150 hover:opacity-100 lg:text-[22px];
   }
   .link.active {
     @apply opacity-100;
