@@ -2,8 +2,6 @@
 module.exports = {
   content: [
     "./src/**/**/*.{js,ts,jsx,tsx}",
-    "./public/**/*.html",
-    "./node_modules/flowbite-react/**/*.js",
   ],
   theme: {
     screens: {
@@ -13,7 +11,7 @@ module.exports = {
       md: "769px",
       lg: "1025px",
       xl: "1236px",
-      '2xl': "1441px",
+      "2xl": "1441px",
     },
     extend: {
       fontFamily: {
@@ -30,9 +28,9 @@ module.exports = {
       },
       colors: {
         yellow: "#FFCF00",
-        light: '#747475'
+        light: "#747475",
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [],
 };

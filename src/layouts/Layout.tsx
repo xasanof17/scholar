@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 // import TopLoader from "react-top-loader";
 import { Meta } from "../meta";
@@ -8,14 +9,18 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: Props) {
+export default function Layout({ children }: Props) {
   return (
-    <div className="app">
+    <>
+      <Head>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      </Head>
       <Meta defaultTitle="Scholar Learning Centre" />
-      
-      <Navbar />
-      <main className="main">{children}</main>
-      <Footer />
-    </div>
+      <div className="app">
+        <Navbar />
+        <main className="main">{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 }

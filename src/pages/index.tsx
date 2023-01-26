@@ -8,11 +8,12 @@ import {
   Teachers,
   WhyChooseUs,
 } from "../components";
+import Layout from "../layouts/Layout";
 import { Meta } from "../meta";
 
 const Home: NextPage = () => {
   return (
-    <>
+    <Layout>
       <Meta description="Scholar Learning Centre" />
       <Banner
         subtitle="100% satisfaction guarantee"
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
       <ResultStudents />
       <Courses />
       <Prices />
-    </>
+    </Layout>
   );
 };
 

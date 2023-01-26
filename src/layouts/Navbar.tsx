@@ -8,33 +8,7 @@ import { Ad, Menu } from "../components";
 import { MdClose } from "react-icons/md";
 import { Listbox } from "@headlessui/react";
 import { Button } from "../widgets";
-
-const links = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "About Us",
-    href: "#about",
-  },
-  {
-    name: "Courses",
-    href: "#courses",
-  },
-  {
-    name: "Events",
-    href: "#events",
-  },
-  {
-    name: "News",
-    href: "/news",
-  },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
-];
+import { links } from "../constants";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -67,11 +41,7 @@ const Navbar = () => {
               <li key={link.name}>
                 <Link
                   href={link.href}
-                  className={`link ${
-                    asPath === `${link.href || `/${link.href}`}}`
-                      ? "active"
-                      : ""
-                  }`}
+                  className={`link ${asPath === link.href && "active"}`}
                   onClick={() => setActive((prev) => !prev)}
                 >
                   {link.name}
@@ -83,7 +53,7 @@ const Navbar = () => {
             <button className="btn-yellow hidden sm:inline">
               Online payment
             </button>
-            <Button type="button" title="Sign up" className="hidden sm:flex" />
+            <Button onClick={() => router.push("/signup")} type="button" title="Sign up" className="hidden sm:flex" />
             <button
               className="inline lg:hidden"
               onClick={() => setMenu((prev) => !prev)}
