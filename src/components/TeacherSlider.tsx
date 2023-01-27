@@ -19,11 +19,11 @@ const TeacherSlider = ({ teachers }: Props) => {
         {teachers.map((teacher, index) => (
           <div
             key={index}
-            className="gap-5 rounded-none border-2 border-gray-200 bg-transparent p-5"
+            className="gap-5 rounded-none border-y-2 border-r-2 border-gray-200 bg-transparent p-5"
           >
-            <div className="grid grid-cols-12">
-              <div className="col-span-4">img</div>
-              <div className="col-span-7">right</div>
+            <div className="flex flex-col items-start justify-center">
+              <div className="">img</div>
+              <div className="">right</div>
             </div>
           </div>
         ))}

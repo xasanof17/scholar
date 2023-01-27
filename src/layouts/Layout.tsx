@@ -14,7 +14,7 @@ export default function Layout({ children }: Props) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
       </Head>
       <Meta defaultTitle="Scholar Learning Centre" />
       <div className="app">
