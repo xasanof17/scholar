@@ -16,7 +16,7 @@ const Prices = () => {
     "Ielts Speaking",
   ];
   return (
-    <section className="mt-[100px]">
+    <section className="py-[100px]">
       <div className="container">
         <YellowTitle title="Prices" />
         <div className="tabs">

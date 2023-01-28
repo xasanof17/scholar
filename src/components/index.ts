@@ -10,3 +10,5 @@ export { default as TabBlock } from "./TabBlock";
 export { default as Courses } from "./Courses";
 export { default as SignUp } from "./SignUp";
 export { default as Phone } from "./Phone";
+export { default as Events } from "./Events";
+

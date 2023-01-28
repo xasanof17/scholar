@@ -9,6 +9,7 @@ import { MdClose } from "react-icons/md";
 import { Listbox } from "@headlessui/react";
 import { Button } from "../widgets";
 import { links } from "../constants";
+import { Link as NavLink } from "react-scroll";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -32,9 +33,17 @@ const Navbar = () => {
     >
       <Ad />
       <nav className="container">
-        <div className="flex items-center justify-between py-4">
-          <Link href="/">
-            <Image src="/vercel.svg" alt="Logo" width={150} height={80} />
+        <div className="flex items-center justify-between py-3 sm:py-4">
+          <Link href="/" className="">
+            <div className="hidden sm:inline">
+              <Image src="/scholar.svg" alt="Scholar" width={200} height={50} />
+            </div>
+            <div className="flex items-center sm:hidden">
+              <Image src="/favicon.svg" alt="Scholar" width={60} height={50} />
+              <div className="">
+                <h3 className="mt-4 text-2xl font-bold">Scholar</h3>
+              </div>
+            </div>
           </Link>
           <ul className="navList">
             {links.map((link) => (

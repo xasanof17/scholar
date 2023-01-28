@@ -3,6 +3,7 @@ import {
   About,
   Banner,
   Courses,
+  Events,
   Prices,
   ResultStudents,
   Teachers,
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
       <ResultStudents />
       <Courses />
       <Prices />
+      <Events />
     </Layout>
   );
 };
