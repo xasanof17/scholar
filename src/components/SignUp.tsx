@@ -1,41 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import PhoneInput from "react-phone-number-input";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { BiArrowBack } from "react-icons/bi";
+import { useRouter } from "next/router";
+import InputMask from "react-input-mask";
+import { toast, Toaster } from "react-hot-toast";
 import english from "../assets/img/english.png";
 import uzbek from "../assets/img/uzbek.png";
 import rus from "../assets/img/rus.png";
-import { BiArrowBack } from "react-icons/bi";
-import { useRouter } from "next/router";
+import google from '../assets/img/google.svg'
 
-interface InputProps {
-  type: string;
-  placeholder: string;
-}
 interface SubmitButton {
+  text: string;
+  onClick?: () => void;
+}
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: number;
+}
+interface GoogleProps {
   text: string;
   onClick: () => void;
 }
-type FormData = {
-  name: string;
-  surname: string;
-  email: string;
-  phone: number;
-  required: string;
-};
 
-const InputText = ({ type, placeholder }: InputProps) => {
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      className={`placeholder:text-bold w-full rounded-lg border-2  border-gray-300 p-2 pl-3 text-xl font-medium text-black outline-none placeholder:text-gray-400 focus:border-yellow/60 focus:placeholder:text-yellow/90
-      `}
-      autoFocus={true}
-    />
-  );
-};
 const SubmitButton = ({ text, onClick }: SubmitButton) => {
   return (
     <button
@@ -53,29 +42,51 @@ const SubmitButton = ({ text, onClick }: SubmitButton) => {
   );
 };
 
+const GoogleButton = ({ text, onClick }: GoogleProps) => {
+  return (
+    <button className="flex items-center space-x-4 w-1/4 rounded-xl p-4 text-gray-500 shadow shadow-gray-500">
+      <Image src={google} alt='google'/>
+      {text}
+    </button>
+  );
+};
+
 const SignUp = () => {
   const router = useRouter();
-  const [phone, setPhone] = useState();
-  const {
-    register,
-    handleSubmit,
-    control,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>();
-  const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
+  const { register, handleSubmit, reset } = useForm<FormData>();
+
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log(data);
+    toast.success("Successfully");
+    reset();
+    setTimeout(() => router.back(), 2000);
+  };
   return (
-    <section className="flex min-h-screen w-screen select-none items-center justify-center lg:grid lg:grid-cols-2">
-      <div className="hidden bg-gradient-to-b from-yellow/70 to-yellow lg:block">
+    <section className="grid min-h-screen w-screen select-none items-center justify-center md:grid-cols-2">
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            borderRadius: "20px",
+            background: "#000",
+            color: "#fff",
+            animationName: "initial",
+            backdropFilter: "revert-layer",
+          },
+        }}
+      />
+
+      <div className="hidden h-full bg-gradient-to-b from-yellow/70 to-yellow md:block">
         <div className="container mt-2">
           <button
             onClick={() => router.back()}
-            className="flex items-center space-x-2 rounded-xl border-2 border-black p-2 text-xl capitalize text-black"
+            className="flex items-center space-x-2 rounded-xl border-2 border-black p-2 text-lg capitalize text-black lg:text-xl"
           >
             <BiArrowBack fontSize={22} /> <span>back</span>
           </button>
           <div className="flex h-full w-full items-center justify-center">
-            <p className="text-2xl font-semibold"></p>
+            <p className="text-2xl font-semibold">xa</p>
           </div>
         </div>
       </div>
@@ -90,59 +101,48 @@ const SignUp = () => {
               Let's Register Online To Our Course
             </p>
           </div>
+          <GoogleButton
+            text="Sign up with Google"
+            onClick={() => console.log("press")}
+          />
           <form
-            className="mt-5 flex w-full justify-center px-4 sm:px-10"
+            className="mt-5 flex w-full justify-center px-4 lg:px-10"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <div className="w-full space-y-3 md:w-1/2">
-              <InputText
+            <div className="w-full space-y-3 lg:w-1/2">
+              <input
                 type="text"
                 placeholder="Surname"
-                {...register("surname", { required: true, maxLength: 50 })}
-              />
-              {errors.surname && (
-                <span className="mt-0 text-start text-[16px] font-semibold leading-none text-red-600">
-                  Surname is required
-                </span>
-              )}
-              <InputText
-                type="text"
-                placeholder="Name"
-                {...register("name", { required: true, maxLength: 50 })}
-              />
-              {errors.name && (
-                <span className="mt-0 text-start text-[16px] font-semibold leading-none text-red-600">
-                  Name is required
-                </span>
-              )}
-              <InputText
-                type="email"
-                placeholder="Email"
-                {...register("email", { required: true })}
-              />
-              {errors.email && (
-                <span className="mt-0 text-start text-[16px] font-semibold leading-none text-red-600">
-                  Email is required
-                </span>
-              )}
-              <Controller
-                name="phone"
-                control={control}
-                render={({ field }) => (
-                  <PhoneInput
-                    {...field}
-                    defaultCountry="UZ"
-                    value={phone}
-                    onChange={() => setPhone(phone)}
-                    className="placeholder:text-bold w-full rounded-lg border-2 border-gray-300 p-2 pl-3 text-xl font-medium text-black outline-none placeholder:text-gray-400 focus:border-yellow/60 focus:placeholder:text-yellow/90"
-                  />
-                )}
+                className={`placeholder:text-bold w-full rounded-lg border-2  border-gray-300 p-2 pl-3 text-xl font-medium text-black outline-none placeholder:text-gray-400 focus:border-yellow/60 focus:placeholder:text-yellow/90`}
+                autoFocus={true}
+                required
+                {...register("lastName", { required: true, maxLength: 50 })}
               />
 
-              <SubmitButton
-                text={"Register"}
-                onClick={() => console.log("submit")}
+              <input
+                type="text"
+                placeholder="Name"
+                className={`placeholder:text-bold w-full rounded-lg border-2  border-gray-300 p-2 pl-3 text-xl font-medium text-black outline-none placeholder:text-gray-400 focus:border-yellow/60 focus:placeholder:text-yellow/90`}
+                required
+                {...register("firstName", { required: true, maxLength: 50 })}
               />
+
+              <input
+                type="email"
+                placeholder="Email"
+                className={`placeholder:text-bold w-full rounded-lg border-2  border-gray-300 p-2 pl-3 text-xl font-medium text-black outline-none placeholder:text-gray-400 focus:border-yellow/60 focus:placeholder:text-yellow/90`}
+                required
+                {...register("email", { required: true })}
+              />
+              <InputMask
+                className="placeholder:text-bold flex w-full items-center rounded-lg border-2 border-gray-300 p-2 pl-3 text-xl font-medium text-black outline-none placeholder:text-black focus:border-yellow/60 focus:placeholder:text-yellow/90"
+                placeholder="+998"
+                mask={"+\\9\\9\\8\\ 99 999 99 99"}
+                maskChar="-"
+                {...register("phone", { required: true })}
+              />
+
+              <SubmitButton text={"Register"} />
 
               <div className="flex flex-col items-center space-y-3 ss:flex-row  ss:justify-between ss:space-y-0">
                 <Link href={"/"} className="langLink active">

@@ -5,7 +5,7 @@ import { Phone } from "../components";
 import { Meta } from "../meta";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-
+import { Toaster } from "react-hot-toast";
 interface Props {
   children: React.ReactNode;
 }

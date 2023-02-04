@@ -36,10 +36,22 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-3 sm:py-4">
           <Link href="/" className="">
             <div className="hidden sm:inline">
-              <Image src="/scholar.svg" alt="Scholar" width={200} height={50} />
+              <Image
+                src="/scholar.svg"
+                alt="Scholar"
+                width={200}
+                height={50}
+                priority
+              />
             </div>
             <div className="flex items-center sm:hidden">
-              <Image src="/favicon.svg" alt="Scholar" width={60} height={50} />
+              <Image
+                src="/favicon.svg"
+                alt="Scholar"
+                width={40}
+                height={40}
+                priority
+              />
               <div className="">
                 <h3 className="mt-4 text-2xl font-bold">Scholar</h3>
               </div>
