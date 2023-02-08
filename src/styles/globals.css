@@ -68,4 +68,7 @@
   .langLink.active {
     @apply rounded-full bg-slate-200;
   }
+  .line{
+    @apply before:content-['']
+  }
 }

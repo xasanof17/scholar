@@ -1,7 +1,6 @@
 import type { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import EmailProvider from "next-auth/providers/email";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -15,12 +14,7 @@ export const authOptions: NextAuthOptions = {
           response_type: "code",
         },
       },
-    }),
-    EmailProvider({
-      server: process.env.EMAIL_SERVER,
-      from: process.env.EMAIL_FROM,
-      // maxAge: 24 * 60 * 60, // How long email links are valid for (default 24h)
-    }),
+    })
   ],
 };
 

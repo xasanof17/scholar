@@ -8,7 +8,6 @@ import { toast, Toaster } from "react-hot-toast";
 import english from "../assets/img/english.png";
 import uzbek from "../assets/img/uzbek.png";
 import rus from "../assets/img/rus.png";
-import google from '../assets/img/google.svg'
 
 interface SubmitButton {
   text: string;
@@ -38,15 +37,6 @@ const SubmitButton = ({ text, onClick }: SubmitButton) => {
         {text}
       </span>
       <span className="absolute inset-0 rounded-xl border-2 border-yellow"></span>
-    </button>
-  );
-};
-
-const GoogleButton = ({ text, onClick }: GoogleProps) => {
-  return (
-    <button className="flex items-center space-x-4 w-1/4 rounded-xl p-4 text-gray-500 shadow shadow-gray-500">
-      <Image src={google} alt='google'/>
-      {text}
     </button>
   );
 };
@@ -101,10 +91,6 @@ const SignUp = () => {
               Let's Register Online To Our Course
             </p>
           </div>
-          <GoogleButton
-            text="Sign up with Google"
-            onClick={() => console.log("press")}
-          />
           <form
             className="mt-5 flex w-full justify-center px-4 lg:px-10"
             onSubmit={handleSubmit(onSubmit)}

@@ -1,6 +1,8 @@
+import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
 import { YellowTitle } from "../widgets";
+import lines from "../assets/img/lines.png";
 
 const students = [
   { name: "john" },
@@ -30,7 +32,15 @@ const ResultStudents = () => {
               className="h-52 rounded-xl bg-yellow p-5 text-black"
             >
               <div className="grid grid-cols-12">
-                <div className="col-span-6 before:content-['']">x</div>
+                <div className="relative col-span-6">
+                  <Image
+                    src={lines}
+                    alt="lines"
+                    width={500}
+                    height={500}
+                    className="absolute -top-10"
+                  />
+                </div>
                 <div className="col-span-5">x</div>
               </div>
             </div>
