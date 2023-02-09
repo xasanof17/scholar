@@ -2,6 +2,6 @@
 module.exports = {
   swcMinify: true,
   images: {
-    domains: ['static3.tgstat.ru'],
+    domains: ['static3.tgstat.ru', 'www.icot.ie'],
   }
 };

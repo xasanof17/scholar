@@ -6,10 +6,10 @@ import cashBack from "../assets/img/cash-back.jpg";
 
 const Events = () => {
   return (
-    <section className="py-[3%]" id="events">
+    <section className="py-[7%]" id="events">
       <div className="container">
         <YellowTitle title="Events" subtitle="Sunday" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div className="hover:cursor-pointer">
             <Image src={events} alt="events" width={450} height={450} />
           </div>

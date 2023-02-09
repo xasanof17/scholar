@@ -1,8 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { BsFacebook, BsInstagram, BsTelegram, BsYoutube } from "react-icons/bs";
-import { FaTiktok } from "react-icons/fa";
+import {
+  BsFacebook,
+  BsInstagram,
+  BsTelegram,
+  BsYoutube,
+  BsPatchCheckFill,
+} from "react-icons/bs";
+import { FaTiktok, FaUserAlt } from "react-icons/fa";
+import { MdMarkEmailUnread } from "react-icons/md";
 
 const socials = [
   {
@@ -16,7 +23,7 @@ const socials = [
     text: "Facebook",
   },
   {
-    href: "",
+    href: "https://www.instagram.com/scholar_uzb/",
     icon: (
       <BsInstagram
         fontSize={25}
@@ -26,7 +33,7 @@ const socials = [
     text: "Instagram",
   },
   {
-    href: "",
+    href: "https://www.youtube.com/channel/UCV1hqm8L7J8ItC_cuJY9LNQ",
     icon: (
       <BsYoutube fontSize={27} className="text-black group-hover:text-yellow" />
     ),
@@ -40,7 +47,7 @@ const socials = [
     text: "TikTok",
   },
   {
-    href: "",
+    href: "https://t.me/scholar_uzb",
     icon: (
       <BsTelegram
         fontSize={25}
@@ -60,13 +67,39 @@ const Footer = () => {
           <div className="flex flex-col">
             <Image src="/scholar.svg" alt="scholar" width={200} height={70} />
           </div>
-          <div className="">scholar</div>
-          <div className="">
+          <div className="flex flex-col">
+            <h3 className="mb-2 text-[24px] font-bold capitalize">community</h3>
+            <a
+              href="tel:+998900198505"
+              className="flex items-center space-x-2 text-xl hover:text-yellow"
+            >
+              +998 90 019-85-05
+            </a>
+            <a
+              href="tel:+998911344468"
+              className="flex items-center space-x-2 text-xl hover:text-yellow "
+            >
+              +998 91 134-44-68
+            </a>
+          </div>
+          <div className="flex flex-col">
             <h3 className="mb-2 text-[24px] font-bold capitalize">
               contact us
             </h3>
-            <a href="tel:+998981103717" className="text-xl hover:text-yellow">
-              +998 98 110-37-17
+            <a
+              href="tel:+998981103717"
+              className="flex items-center space-x-2 text-xl hover:text-yellow"
+            >
+              <FaUserAlt />
+              <span>+998 98 110-37-17</span>
+            </a>
+
+            <a
+              href="mailto:scholarlc@mail.com"
+              className="flex items-center space-x-2 text-xl hover:text-yellow"
+            >
+              <MdMarkEmailUnread fontSize={25} />
+              <span>scholarlc@mail.com</span>
             </a>
           </div>
           <div className="flex flex-col">
@@ -78,6 +111,7 @@ const Footer = () => {
                 <li key={i}>
                   <Link
                     href={link.href}
+                    target="_blank"
                     className="group flex items-center space-x-2 text-xl group-hover:text-yellow"
                   >
                     {link.icon}
@@ -89,8 +123,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="mt-2 border-t border-gray-300 py-5 text-center text-base">
-        All Rights Reserved {year}
+      <p className="mt-2 border-t border-gray-300 py-5 text-center text-base sm:text-[18px]">
+        Copyright &copy; Scholar Learning Centre {year}. All rights reserved
       </p>
     </footer>
   );

@@ -26,7 +26,7 @@ const benefits = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="my-16">
+    <section className="py-[5%]">
       <div className="container">
         <div className="grid grid-rows-1">
           <div className="mb-14 flex flex-col items-center justify-center">

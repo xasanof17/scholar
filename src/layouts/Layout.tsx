@@ -1,11 +1,11 @@
 import Head from "next/head";
 import React from "react";
 import { Phone } from "../components";
-// import TopLoader from "react-top-loader";
 import { Meta } from "../meta";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import { Toaster } from "react-hot-toast";
+import NextNProgress from "nextjs-progressbar";
+
 interface Props {
   children: React.ReactNode;
 }
@@ -18,6 +18,13 @@ export default function Layout({ children }: Props) {
       </Head>
       <Meta defaultTitle="Scholar Learning Centre" />
       <div className="app">
+        <NextNProgress
+          color="#FFDA3C"
+          startPosition={0.5}
+          stopDelayMs={400}
+          height={5}
+          showOnShallow={false}
+        />
         <Navbar />
         <main className="main">
           {children}

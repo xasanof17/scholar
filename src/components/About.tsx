@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about" className="hidden pt-[10%] md:block">
+    <section id="about" className="hidden py-[7%] sm:py-[10%] md:block">
       <div className="container">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="relative">

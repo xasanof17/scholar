@@ -17,7 +17,7 @@ const links: NavLink[] = [
   },
   {
     name: "News",
-    href: "/",
+    href: "/news",
   },
 ];
 

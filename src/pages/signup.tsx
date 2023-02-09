@@ -11,7 +11,7 @@ const SignUpPage = () => {
       <Meta
         title="Scholar | Registration"
         description="Scholar Learning Centre - SignUp for own students"
-        key=""
+        key="scholar register"
       />
       <SignUp />
     </>

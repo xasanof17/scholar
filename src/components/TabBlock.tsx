@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Button, PriceButton } from "../widgets";
+import { useRouter } from "next/router";
+import { PriceButton } from "../widgets";
 
 interface Props {
   info: string[];
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const TabBlock = ({ info, img, price }: Props) => {
+  const router = useRouter();
   return (
     <div className="grid grid-cols-12 gap-y-14 gap-x-0 md:gap-y-0 lg:gap-x-4">
       <div className="col-span-12 flex flex-col space-y-7 lg:col-span-4 lg:justify-between lg:space-y-0">
@@ -23,10 +25,10 @@ const TabBlock = ({ info, img, price }: Props) => {
             Price: <span className="text-3xl font-bold">{price} UZS</span>
           </p>
         </div>
-        <PriceButton title="Sign Up" />
+        <PriceButton title="Sign Up" onClick={() => router.push("/signup")} />
       </div>{" "}
       <div className="relative col-span-12 hidden h-[600px] sm:block lg:col-span-8">
-        <Image src={img} alt="scholar" fill priority />
+        <Image src={img} alt="scholar" fill />
       </div>
     </div>
   );

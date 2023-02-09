@@ -14,7 +14,7 @@ const teachers = [
 
 const Teachers = () => {
   return (
-    <section className="my-[10%]">
+    <section className="py-[10%]">
       <div className="container">
         <YellowTitle title="Teachers" />
         <TeacherSlider teachers={teachers} />

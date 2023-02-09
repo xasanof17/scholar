@@ -1,14 +1,14 @@
-import React from "react";
 interface Props {
   title: string;
-  type?: string;
   onClick?: () => void;
   className?: string;
 }
-const Button = ({ type, title, onClick, className }: Props) => {
+
+const Button = ({ title, onClick, className }: Props) => {
   return (
     <>
       <button
+        type="button"
         onClick={onClick}
         className={`${className} group relative overflow-hidden rounded-lg bg-gray-100 px-5 py-2.5 text-lg font-medium text-gray-600 shadow-inner`}
       >

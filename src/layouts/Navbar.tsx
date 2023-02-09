@@ -4,16 +4,13 @@ import Link from "next/link";
 import { HiOutlineLanguage } from "react-icons/hi2";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useRouter } from "next/router";
-import { Ad, Menu } from "../components";
+import { Menu } from "../components";
 import { MdClose } from "react-icons/md";
-import { Listbox } from "@headlessui/react";
 import { Button } from "../widgets";
 import { links } from "../constants";
-import { Link as NavLink } from "react-scroll";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const [open, setOpen] = useState(true);
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(false);
   const router = useRouter();
@@ -25,50 +22,43 @@ const Navbar = () => {
     });
   }, []);
 
+  const List = () => {
+    return (
+      <>
+        {links.map((link) => (
+          <li key={link.name}>
+            <Link
+              href={link.href}
+              // className={`link ${asPath === link.href && "active"}`}
+              onClick={() => setActive((prev) => !prev)}
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </>
+    );
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 w-full bg-white shadow-md ${
         scroll ? "shadow-md" : "shadow-none"
       }`}
     >
-      <Ad />
       <nav className="container">
         <div className="flex items-center justify-between py-3 sm:py-4">
           <Link href="/" className="">
             <div className="hidden sm:inline">
-              <Image
-                src="/scholar.svg"
-                alt="Scholar"
-                width={200}
-                height={50}
-                priority
-              />
+              <Image src="/scholar.svg" alt="Scholar" width={200} height={50} />
             </div>
             <div className="flex items-center sm:hidden">
-              <Image
-                src="/favicon.svg"
-                alt="Scholar"
-                width={40}
-                height={40}
-                priority
-              />
-              <div className="">
-                <h3 className="mt-4 text-2xl font-bold">Scholar</h3>
-              </div>
+              <Image src="/favicon.svg" alt="Scholar" width={40} height={40} />
+              <h3 className="mt-4 text-2xl font-bold">Scholar</h3>
             </div>
           </Link>
           <ul className="navList">
-            {links.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className={`link ${asPath === link.href && "active"}`}
-                  onClick={() => setActive((prev) => !prev)}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
+            <List />
           </ul>
           <div className="flex items-center sm:space-x-3">
             <button className="btn-yellow hidden sm:inline">
@@ -76,7 +66,6 @@ const Navbar = () => {
             </button>
             <Button
               onClick={() => router.push("/signup")}
-              type="button"
               title="Sign up"
               className="hidden sm:flex"
             />
@@ -93,7 +82,7 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          {menu && <Menu />}
+          {menu && <Menu list={<List />} />}
         </div>
       </nav>
     </header>
